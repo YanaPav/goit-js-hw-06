@@ -18,7 +18,7 @@ function getInputValue(event) {
   return
   }
   amount = event.currentTarget.value
-  console.log(amount)  
+  // console.log(amount)  
 }
 
 
@@ -35,7 +35,7 @@ function createBoxes() {
     collectionEl += `<div style="width: ${30+i*10}px; height: ${30+i*10}px; background-color: ${getRandomHexColor()}"></div>`
   }
 
-  console.log(collectionEl)
+  // console.log(collectionEl)
   collection.innerHTML = collectionEl
   input.value = ''
   amount = 0
