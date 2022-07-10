@@ -6,6 +6,7 @@ const body = document.body
 const changeColorBtn = document.querySelector('.change-color')
 const colorText = document.querySelector('.color')
 
+// colorText.textContent = '#ffffff'
 
 const onChangeColorBtnClick = () => {
   const currentColor = getRandomHexColor()
