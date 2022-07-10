@@ -6,23 +6,32 @@ const input = document.querySelector("#controls input")
 const createBtn = document.querySelector('[data-create]')
 const destroyBtn = document.querySelector('[data-destroy]')
 const collection = document.querySelector("#boxes")
+
 let amount = 0
 
-input.addEventListener('blur', getInputValue)
+input.addEventListener('input', getInputValue)
 createBtn.addEventListener('click', createBoxes)
 destroyBtn.addEventListener('click', destroyBoxes)
+window.addEventListener('keydown', keyDownFunc)
 
 
 function getInputValue(event) {
-  if (event.currentTarget.value === '') {
-  return
+  if (event.currentTarget.value === '' || event.currentTarget.value === '0') {
+    return
   }
   amount = event.currentTarget.value
   // console.log(amount)  
 }
 
+function keyDownFunc(event) {
+  if (event.code === 'Enter' || event.code === 'NumpadEnter') {
+    createBoxes()
+  }
+    
+}
 
 function createBoxes() {
+  
   if (amount === 0) {
     console.log('Введіть число')
     return
